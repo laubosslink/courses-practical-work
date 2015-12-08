@@ -1,0 +1,30 @@
+python pacman.py -l tinyMaze -p SearchAgent -a fn=dfs
+python pacman.py -l openMaze -z 0.5 -p SearchAgent -a fn=dfs
+
+echo "** Exercise 1"
+python pacman.py -l tinyMaze -p SearchAgent -a fn=bfs
+python pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
+python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=bfs
+
+echo "** Exercise 2"
+python pacman.py -l tinyMaze -p SearchAgent -a fn=astar
+python pacman.py -l mediumMaze -p SearchAgent -a fn=astar
+python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar
+
+echo "** Exercise 3"
+python pacman.py -l openMaze -z .5 -p SearchAgent -a fn=astar
+python pacman.py -l openMaze -z .5 -p SearchAgent -a fn=astar,heuristic=mazeHeuristic 
+
+echo "** Exercise 4"
+python pacman.py -l tinyCorners -p SearchAgent -a fn=aStarSearch,prob=CornersProblem,heuristic=cornersHeuristic
+python pacman.py -l mediumCorners -z 0.5 -p SearchAgent -a fn=aStarSearch,prob=CornersProblem,heuristic=cornersHeuristic
+
+python pacman.py -l bigCorners -z 0.5 -p SearchAgent -a fn=aStarSearch,prob=CornersProblem
+python pacman.py -l bigCorners -z 0.5 -p SearchAgent -a fn=aStarSearch,prob=CornersProblem,heuristic=cornersHeuristic
+
+
+echo "** Exercise 5"
+python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
+python pacman.py -l mediumDottedMaze -p StayEastSearchAgent
+python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
+

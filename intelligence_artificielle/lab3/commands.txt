@@ -1,0 +1,26 @@
+python pacman.py
+
+python pacman.py -p MinimaxAgent1 -l minimaxClassic -a depth=4 -k 1
+python pacman.py -p MinimaxAgent1 -l smallClassic -a depth=3 -k 1
+python pacman.py -p MinimaxAgent1 -l minimaxClassic -a depth=3 -k 1 -q -n 10
+
+echo "** Exercise 1"
+python pacman.py -p MinimaxAgentN -l smallClassic -a depth=3
+python pacman.py -p MinimaxAgentN -l minimaxClassic -a depth=4 -k 2
+python pacman.py -p MinimaxAgentN -l minimaxClassic -a depth=4 -k 2 -q -n 10
+
+echo "** Exercise 2"
+python pacman.py -p AlphaBetaAgent -l smallClassic -a depth=3
+python pacman.py -p AlphaBetaAgent -l smallClassic -a depth=4
+python pacman.py -p AlphaBetaAgent -l minimaxClassic -a depth=4 -k 2
+python pacman.py -p AlphaBetaAgent -l minimaxClassic -a depth=4 -k 2 -q -n 10
+
+echo "** Exercise 3"
+python pacman.py -p ExpectimaxAgent -l smallClassic -a depth=3
+python pacman.py -p ExpectimaxAgent -l minimaxClassic -a depth=4 -k 2
+python pacman.py -p ExpectimaxAgent -l minimaxClassic -a depth=4 -k 2 -q -n 10
+
+echo "** Exercise 4"
+python pacman.py -p AlphaBetaAgent -l smallClassic -a evalFn=better,depth=4
+python pacman.py -p AlphaBetaAgent -l smallClassic -a evalFn=better,depth=3
+python pacman.py -p ExpectimaxAgent -l minimaxClassic -a evalFn=better,depth=4 -k 2 -q -n 10
