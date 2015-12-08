@@ -1,0 +1,34 @@
+#!/bin/bash
+
+n=$1
+shift
+
+dir=$1
+reponse=""
+
+for file in `bash n-plus-gros $n $dir`
+do
+	#Si c'est un dossier 
+	if (cd $file) >/dev/null 2>&1
+	then
+		#Récursivité on regarde le fichier le plus gros dans ce dossier
+		bash nettoyer 1 $file
+	else
+	#Sinon c'est un fichier on demande si il faut le supprimer
+
+		while echo $reponse | grep -v -x o >/dev/null && echo $reponse | grep -v -x n>/dev/null
+		do
+			echo "Supprimer $file (o/n) ?"
+			read reponse
+		done
+	fi
+
+	if echo $reponse | grep -x o >/dev/null
+	then
+		rm $file
+	fi
+
+	#On redefinit reponse pour le retour dans la boucle
+	reponse=""
+done
+

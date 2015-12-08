@@ -1,0 +1,10 @@
+#!/bin/bash
+#set -x
+
+read a b c
+
+while echo $a | grep -v -x '' 1>/dev/null
+do
+	expr $a "$b" $c
+	read a b c
+done

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Remplace : par un espace dans $PATH
+listfile=`echo $PATH | sed s/:/\ /g`
+
+#On parcours chaque dossier
+for dir in $listfile
+do
+	#Dans un dossier on parcours les fichiers
+        for file in `ls $dir`
+        do
+		#On regarde si le droit x est présent à la fin du fichier
+                if ls -l $dir/$file | cut -c 1,4,7,10 | grep \\-xxx >>/dev/null
+                then
+			#Il est présent on l'affiche
+                        echo $file
+                fi
+        done
+done

@@ -1,0 +1,134 @@
+#!/bin/bash
+
+debug=false
+
+#Décalaration des variables
+dossierPoubelle="$HOME/poubelle"
+
+recupererFichiers=false
+recupererFichier=false
+voirContenuPoubelle=false
+viderPoubelle=false
+
+fichiers=""
+
+if echo $# | grep -x 0 1>/dev/null 2>&1
+then
+	echo "Utilisation :"
+	echo "jeter [Options]... [Fichier]... "
+	echo
+	echo "Options : "
+	echo "-r : Récupérer le(s) fichier(s)"
+	echo "-l : Lister les fichiers dans la corbeille"
+	echo "-v : Vider la corbeille"
+fi
+
+#On traite les paramètres
+for i in `seq $#`
+do
+	if echo $1 | grep -e -r>/dev/null
+	then
+		recupererFichier=true
+	elif echo $1 | grep -e -l>/dev/null
+	then
+		voirContenuPoubelle=true
+	elif echo $1 | grep -e -v>/dev/null
+	then
+		viderPoubelle=true
+	elif echo $1 | grep -e -R>/dev/null
+	then
+		recupererFichiers=true
+	else
+		fichiers="$1 $fichiers"
+	fi
+
+	if $debug
+	then
+		echo "Argument \$1 : " $1
+	fi
+
+	#Paramètre suivant !
+	shift
+done
+
+#On creer la poubelle si elle existe pas !
+mkdir -p $dossierPoubelle
+
+#DEBUG
+if $debug
+then
+	echo "Récupérer ce fichier : " $recupererFichier
+	echo "Voir le contenu de la poubelle : " $voirContenuPoubelle
+	echo "Vider la poubelle : " $viderPoubelle
+	echo "Le(s) fichier(s) à mettre à la poubelle :" $fichiers
+fi
+
+#Mettre à la corbeille si on ne récupère pas de fichier
+if ! $recupererFichiers && ! $recupererFichier && echo $fichiers | grep -v -x "">/dev/null
+then
+
+	#On traite chaque fichier
+	for file in $fichiers
+	do
+		echo "Mise à la corbeille de : $file"
+
+		dirFile=`dirname $file`
+		fileName=`basename $file`
+
+		#Si le fichier $file n'existe pas dans la poubelle on le déplace avecle même nom...
+		if ! ls $dossierPoubelle/$file >/dev/null 2>&1
+		then
+			mv $dirFile/$fileName $dossierPoubelle
+			echo `pwd`/$dirFile/$fileName >$dossierPoubelle/.$fileName
+		else
+		#...Sinon on lui donne comme nom $file@$n
+			x=1
+			while ls $dossierPoubelle/$file\@$x >/dev/null 2>&1
+			do
+				x=`expr $x + 1`
+			done
+
+			mv $dirFile/$fileName $dossierPoubelle/$file\@$x
+			echo `pwd`/$dirFile/$fileName >$dossierPoubelle/.$fileName\@$x
+		fi
+	done
+
+fi
+
+#Vider la poubelle
+if $viderPoubelle
+then
+	echo "Vidage de la poubelle."
+	rm -r $dossierPoubelle
+fi
+
+#Voir contenu de la poubelle
+if $voirContenuPoubelle
+then
+	echo "Contenu de la poubelle : "
+	ls -l $dossierPoubelle
+fi
+
+#Récupérer un fichier
+if $recupererFichier && echo $fichiers | grep -v -x "">/dev/null
+then
+	echo "Récupération du/des fichier(s) : $fichiers"
+	mv -n $dossierPoubelle/$fichiers .
+fi
+
+#Récupérer le/les fichiers
+if $recupererFichiers >/dev/null
+then
+	for file in $fichiers
+	do
+		echo "Récupération du fichier : $file"
+		if ls $dossierPoubelle/.$file >/dev/null
+		then
+			mv $dossierPoubelle/$file `cat $dossierPoubelle/.$file`
+			rm $dossierPoubelle/.$file
+		else
+			echo "Fichier .$file innexistant. Impossible de trouver l'emplacement d'origine. Déplacement dans `pwd`"
+			mv $dossierPoubelle/$file `pwd`
+		fi
+	done
+fi

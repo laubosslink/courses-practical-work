@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for rep in `ls -l $HOME | grep ^d | cut -d" " -f8`
+do
+	#if cd $HOME/$rep 2>>/dev/null
+	#then
+		echo $rep
+	#fi
+done
+

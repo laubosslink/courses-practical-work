@@ -1,0 +1,11 @@
+#!/bin/bash
+
+n=$1
+shift
+
+dir=$1
+
+for file in `ls -1 -A "$dir"`
+do
+	du -sb "$dir/$file" 2>/dev/null
+done | sort -n -r | head -n $n | cut -f2

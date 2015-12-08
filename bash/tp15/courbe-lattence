@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#set -x
+
+sortie=""
+
+rep=`ping -c$1 $2 | grep time= | cut -d= -f4 | cut -d" " -f1`
+
+i=0
+for l in `echo $rep`
+do
+	#echo $l
+	i=`expr $i + 1`
+
+	echo "$i $l"
+
+done | gnuplot -e 'plot "-" with linespoint; pause mouse;'

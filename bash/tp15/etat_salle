@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#set -x
+
+optionN=false
+
+for i in `seq $#`
+do
+	if expr $1 = -n >/dev/null
+	then
+		optionN=true
+	else
+		arbre=$1
+	fi
+
+	shift
+done
+
+for i in `seq -w 26`
+do
+	if $optionN
+	then
+		./est_allumee -n $arbre$i
+	else
+		./est_allumee $arbre$i
+	fi
+done

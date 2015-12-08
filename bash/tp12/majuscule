@@ -1,0 +1,8 @@
+#!/bin/bash
+mot=0
+
+while echo $mot | grep -v ^fini$>/dev/null
+do
+	read -p "Lettre/Phrase : " mot
+	echo $mot | tr [:lower:] [:upper:]
+done

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#set -x
+
+optionN=false
+
+for i in `seq $#`
+do
+        if expr $1 = -n >/dev/null
+        then
+                optionN=true
+        else
+                machine=$1
+        fi
+
+        shift
+done
+
+if $optionN
+then
+	if ! ping -c2 $machine >/dev/null 2>&1
+	then
+		echo $machine
+	fi
+else
+	if ping -c2 $machine >/dev/null 2>&1
+	then
+		echo $machine
+	fi
+fi

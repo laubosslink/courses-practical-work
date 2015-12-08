@@ -1,0 +1,27 @@
+#!/bin/bash
+
+n=$1
+shift
+
+dir=$1
+
+#ls -1 -A $dir | while read file
+for file in `ls -1 -A "$dir"`
+do
+	#Si c'est un dossier 
+	#if (cd $dir/$file) 2>/dev/null
+	#then
+		#On rentre dedans (pour éviter le lien absolue avec du)
+		#cd $dir 2>/dev/null
+		#On regarde les tailles des fichiers et on remplace les tabulations par des espaces pour le traitement finale
+		du -sb "$dir/$file" 2>/dev/null # | sed "s/\t/ /"
+	#else
+	#Sinon c'est un fichier
+	#	du -sb "$dir/$file" 2>/dev/null
+	#fi
+done | sort -n -r | head -n $n | cut -f2 #On ressort la liste des fichiers (aucun lien absolue -> équivalent a basename)
+
+#ls -1 -A $rep | while read fichier
+#do
+#du -sb "$rep/$fichier"
+#done
