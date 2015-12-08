@@ -1,0 +1,10 @@
+mainvalidator.h
+mainvalidator.cpp
+mainwindow.h
+mainwindow.cpp
+mainwindow.ui
+moc_mainvalidator.cpp
+moc_mainwindow.cpp
+TP2.pro
+ui_mainwindow.h
+main.cpp
