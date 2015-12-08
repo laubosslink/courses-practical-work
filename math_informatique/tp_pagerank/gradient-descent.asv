@@ -1,0 +1,25 @@
+function [x_n] = gradient-descent(A, gamma)
+    
+    n_iter=1000
+
+    % Initialisation x(0)
+    n = size(A)
+    n = n(1)
+    x_0 = ones(1,n)/n
+   
+    % Données du TP
+    alpha = 0.15
+    e = transpose(ones(1, n))
+    
+    % Voir résolution
+    B = 4 + gamma * n
+    S = ones(n)/n
+    M = (1 - alpha)*A+alpha*S
+    
+    % Données du TP
+    mu = 1.99/B
+    
+    % 
+    for i=1:n_iter
+        x_n = x_n - (mu * ((transpose(M - eye(n)) * (M - eye(n)) * x_n + gamma*(transpose(e) * x_n - 1) * e)) % transpose(A) <=> A.'
+    end
