@@ -1,0 +1,21 @@
+Questions:
+
+1)a) Le code de la ligne 6,7,8 produira respectivement:
+- Le référencement de la variable x dans r
+- Le stockage de la valeur de y, dans r (étant une référance) donc dans x. r vaudra 3, donc x vaudra 3
+- Affectation de 5 à y
+
+2.2.1)
+
+L'intrue de la liste est la variable à modifié avec un passage par valeur. Le message
+du compilateur donne un lvalue (soit left value) c'est à dire qu'on ne peut affecter
+une valeur sur une valeur (ce n'est pas une variable).
+
+Résolution du problème : voir code source
+
+3) Référence et retour de fonction
+
+Le compilateur va provoquer une erreur car la fonction saisieArticle retourne un Article,
+or la fonction echangerPrix attend une référence d'un Article. Ce n'est donc pas le même type d'argument.
+
+

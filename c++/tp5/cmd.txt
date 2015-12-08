@@ -1,0 +1,3 @@
+rm bin/essai_ensemble; clear; make; ./bin/essai_ensemble
+
+rm bin/test_ensemble; clear; make test; ./bin/test_ensemble
