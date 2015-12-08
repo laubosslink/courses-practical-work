@@ -1,0 +1,62 @@
+#Cas ou Père 5 sec, fils 10 sec
+#LOGIQUEMENT : le fils est alors rattaché au PID 1
+
+laubosslink@pc-lbl:/media/files/Courses/2012-2013/S4/ProgSyst/Fork$ ps
+  PID TTY          TIME CMD
+ 3575 pts/3    00:00:00 bash
+ 4068 pts/3    00:00:00 main
+ 4069 pts/3    00:00:00 main
+ 4070 pts/3    00:00:00 ps
+laubosslink@pc-lbl:/media/files/Courses/2012-2013/S4/ProgSyst/Fork$ psPère:
+a -> 10
+b -> 5
+
+  PID TTY          TIME CMD
+ 3575 pts/3    00:00:00 bash
+ 4068 pts/3    00:00:00 main
+ 4069 pts/3    00:00:00 main <defunct> 
+ 4071 pts/3    00:00:00 ps
+laubosslink@pc-lbl:/media/files/Courses/2012-2013/S4/ProgSyst/Fork$ ps
+  PID TTY          TIME CMD
+ 3575 pts/3    00:00:00 bash
+ 4068 pts/3    00:00:00 main
+ 4069 pts/3    00:00:00 main <defunct>
+ 4072 pts/3    00:00:00 ps
+laubosslink@pc-lbl:/media/files/Courses/2012-2013/S4/ProgSyst/Fork$ Fils(4068)
+a -> 5
+b -> 10
+ps
+  PID TTY          TIME CMD
+ 3575 pts/3    00:00:00 bash
+ 4073 pts/3    00:00:00 ps
+[1]+  Done                    ./main
+
+
+# Cas ou père 10 sec, fils 5 sec
+
+
+laubosslink@pc-lbl:/media/files/Courses/2012-2013/S4/ProgSyst/Fork$ gcc main.c -o main; ./main &
+[1] 4079
+laubosslink@pc-lbl:/media/files/Courses/2012-2013/S4/ProgSyst/Fork$ ps
+  PID TTY          TIME CMD
+ 3575 pts/3    00:00:00 bash
+ 4079 pts/3    00:00:00 main
+ 4080 pts/3    00:00:00 main
+ 4081 pts/3    00:00:00 ps
+laubosslink@pc-lbl:/media/files/Courses/2012-2013/S4/ProgSyst/Fork$ psFils(4079)
+a -> 5
+b -> 10
+
+  PID TTY          TIME CMD
+ 3575 pts/3    00:00:00 bash
+ 4080 pts/3    00:00:00 main
+ 4082 pts/3    00:00:00 ps
+[1]+  Done                    ./main
+laubosslink@pc-lbl:/media/files/Courses/2012-2013/S4/ProgSyst/Fork$ Père:
+a -> 10
+b -> 5
+ps
+  PID TTY          TIME CMD
+ 3575 pts/3    00:00:00 bash
+ 4083 pts/3    00:00:00 ps
+
