@@ -1,0 +1,24 @@
+-----------------------------  ex4.pjt - Optimise  -----------------------------
+[ex4.cdb] "C:\CCStudio_v3.1\plugins\bios\gconfgen" ex4.cdb
+
+[ex4.C] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -o3 -i"C:/CCStudio_v3.1/C6000/dsk6713/include" -mv6700 -@"Optimise.lkf" "ex4.C"
+"C:/CCStudio_v3.1/C6000/csl/include/csl_edma.h", line 517: warning: variable "tccm" was declared but never referenced
+"C:/CCStudio_v3.1/C6000/csl/include/csl_edma.h", line 517: warning: variable "tcc" was declared but never referenced
+
+[FIR_asm.asm] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -o3 -i"C:/CCStudio_v3.1/C6000/dsk6713/include" -mv6700 -@"Optimise.lkf" "FIR_asm.asm"
+
+[FIR_asmPipe.asm] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -o3 -i"C:/CCStudio_v3.1/C6000/dsk6713/include" -mv6700 -@"Optimise.lkf" "FIR_asmPipe.asm"
+
+[FIR_sa.sa] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -o3 -i"C:/CCStudio_v3.1/C6000/dsk6713/include" -mv6700 -@"Optimise.lkf" "FIR_sa.sa"
+
+[USL.C] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -o3 -i"C:/CCStudio_v3.1/C6000/dsk6713/include" -mv6700 -@"Optimise.lkf" "USL.C"
+
+[ex4cfg.s62] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -o3 -i"C:/CCStudio_v3.1/C6000/dsk6713/include" -mv6700 -@"Optimise.lkf" "ex4cfg.s62"
+
+[ex4cfg_c.c] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -g -q -o3 -i"C:/CCStudio_v3.1/C6000/dsk6713/include" -mv6700 -@"Optimise.lkf" "ex4cfg_c.c"
+
+[Linking...] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -@"Optimise.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 2 Warnings, 0 Remarks.

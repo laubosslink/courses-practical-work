@@ -1,0 +1,65 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="Z:\dsp\ex4\"
+ProjectType=Executable
+CPUFamily=TMS320C62XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Optimise"
+Config="Release"
+
+[Source Files]
+Source="C:\CCStudio_v3.1\C6000\dsk6713\lib\dsk6713bsl.lib"
+Source="ex4.C"
+Source="ex4.cdb"
+Source="FIR_asm.asm"
+Source="FIR_asmPipe.asm"
+Source="FIR_sa.sa"
+Source="USL.C"
+
+[Generated Files]
+Source="ex4cfg.cmd"
+Source="ex4cfg.h"
+Source="ex4cfg.s62"
+Source="ex4cfg_c.c"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"C:\CCStudio_v3.1\C6000\dsk6713\include" -d"_DEBUG" -mv6700
+
+["Compiler" Settings: "Optimise"]
+Options=-g -q -o3 -i"C:\CCStudio_v3.1\C6000\dsk6713\include" -mv6700
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release"
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\ex4.map" -o".\Debug\ex4.out" -w -x
+
+["Linker" Settings: "Optimise"]
+Options=-c -m".\Optimise\ex4.map" -o".\Optimise\ex4.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\ex4.map" -o".\Release\ex4.out" -w -x
+
+["ex4cfg.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["ex4cfg.cmd" Settings: "Optimise"]
+LinkOrder=1
+
+["ex4cfg.cmd" Settings: "Release"]
+LinkOrder=1
+
+["ex4cfg.h" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["ex4cfg.h" Settings: "Optimise"]
+ExcludeFromBuild=true
+
+["ex4cfg.h" Settings: "Release"]
+ExcludeFromBuild=true
+

@@ -1,0 +1,132 @@
+-----------------------------  ex4.pjt - Release  -----------------------------
+[ex4.cdb] "C:\CCStudio_v3.1\plugins\bios\gconfgen" ex4.cdb
+
+[ex4.C] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -o3 -fr"Z:/dsp/ex4/Release" -@"Release.lkf" "ex4.C"
+"USL.h", line 11: fatal error: could not open source file "dsk6713.h"
+1 fatal error detected in the compilation of "ex4.C".
+Compilation terminated.
+
+>> Compilation failure
+
+[FIR_asm.asm] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -o3 -fr"Z:/dsp/ex4/Release" -@"Release.lkf" "FIR_asm.asm"
+
+[FIR_asmPipe.asm] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -o3 -fr"Z:/dsp/ex4/Release" -@"Release.lkf" "FIR_asmPipe.asm"
+
+[FIR_sa.sa] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -o3 -fr"Z:/dsp/ex4/Release" -@"Release.lkf" "FIR_sa.sa"
+
+      Loop source line                 : 17
+      Loop closing brace source line   : 28
+      Known Minimum Trip Count         : 1                    
+      Known Max Trip Count Factor      : 1
+      Loop Carried Dependency Bound(^) : 2
+      Unpartitioned Resource Bound     : 1
+      Partitioned Resource Bound(*)    : 2
+      Resource Partition:
+                                A-side   B-side
+      .L units                     0        0     
+      .S units                     0        1     
+      .D units                     1        1     
+      .M units                     1        1     
+      .X cross paths               2*       1     
+      .T address paths             1        1     
+      Long read paths              0        0     
+      Long write paths             0        0     
+      Logical  ops (.LS)           1        0     (.L or .S unit)
+      Addition ops (.LSD)          2        1     (.L or .S or .D unit)
+      Bound(.L .S .LS)             1        1     
+      Bound(.L .S .D .LS .LSD)     2*       1     
+
+      Searching for software pipeline schedule at ...
+         ii = 2  Schedule found with 5 iterations in parallel
+      Done
+
+      Collapsed epilog stages     : 4
+      Prolog not entirely removed
+      Collapsed prolog stages     : 3
+
+      Minimum required memory pad : 0 bytes
+
+      For further improvement on this loop, try option -mh16
+
+      Minimum safe trip count     : 1
+
+      Loop source line                 : 17
+      Loop closing brace source line   : 28
+      Known Minimum Trip Count         : 1                    
+      Known Max Trip Count Factor      : 1
+      Loop Carried Dependency Bound(^) : 2
+      Unpartitioned Resource Bound     : 1
+      Partitioned Resource Bound(*)    : 2
+      Resource Partition:
+                                A-side   B-side
+      .L units                     0        0     
+      .S units                     0        1     
+      .D units                     1        1     
+      .M units                     1        1     
+      .X cross paths               2*       1     
+      .T address paths             1        1     
+      Long read paths              0        0     
+      Long write paths             0        0     
+      Logical  ops (.LS)           1        0     (.L or .S unit)
+      Addition ops (.LSD)          2        1     (.L or .S or .D unit)
+      Bound(.L .S .LS)             1        1     
+      Bound(.L .S .D .LS .LSD)     2*       1     
+
+      Searching for software pipeline schedule at ...
+         ii = 2  Schedule found with 5 iterations in parallel
+      Done
+
+      Collapsed epilog stages     : 4
+      Prolog not entirely removed
+      Collapsed prolog stages     : 3
+
+      Minimum required memory pad : 0 bytes
+
+      For further improvement on this loop, try option -mh16
+
+      Minimum safe trip count     : 1
+
+      Loop source line                 : 17
+      Loop closing brace source line   : 28
+      Known Minimum Trip Count         : 1                    
+      Known Max Trip Count Factor      : 1
+      Loop Carried Dependency Bound(^) : 2
+      Unpartitioned Resource Bound     : 1
+      Partitioned Resource Bound(*)    : 2
+      Resource Partition:
+                                A-side   B-side
+      .L units                     0        0     
+      .S units                     1        0     
+      .D units                     1        1     
+      .M units                     1        1     
+      .X cross paths               1        2*    
+      .T address paths             1        1     
+      Long read paths              0        0     
+      Long write paths             0        0     
+      Logical  ops (.LS)           0        1     (.L or .S unit)
+      Addition ops (.LSD)          1        2     (.L or .S or .D unit)
+      Bound(.L .S .LS)             1        1     
+      Bound(.L .S .D .LS .LSD)     1        2*    
+
+      Searching for software pipeline schedule at ...
+         ii = 2  Schedule found with 5 iterations in parallel
+      Done
+
+      Collapsed epilog stages     : 4
+      Prolog not entirely removed
+      Collapsed prolog stages     : 3
+
+      Minimum required memory pad : 0 bytes
+
+      For further improvement on this loop, try option -mh16
+
+      Minimum safe trip count     : 1
+
+[USL.C] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -o3 -fr"Z:/dsp/ex4/Release" -@"Release.lkf" "USL.C"
+
+[ex4cfg.s62] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -o3 -fr"Z:/dsp/ex4/Release" -@"Release.lkf" "ex4cfg.s62"
+
+[ex4cfg_c.c] "C:\CCStudio_v3.1\C6000\cgtools\bin\cl6x" -o3 -fr"Z:/dsp/ex4/Release" -@"Release.lkf" "ex4cfg_c.c"
+
+Build Complete,
+  1 Errors, 0 Warnings, 0 Remarks.

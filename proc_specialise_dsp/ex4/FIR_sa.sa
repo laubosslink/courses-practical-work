@@ -1,0 +1,34 @@
+;*********************************
+; @file :  FIR_sa.sa
+; @brief : Algorithme d'un filtre FIR - assembleur linéaire (utilisation de LDW)
+; @author : 
+; last modification : 
+;*********************************
+
+	.global		_FIR_sa		; Permet de rendre le label accessible par d'autre fichier (idem extern en "C")
+
+
+	
+_FIR_sa		.cproc	pta, ptx, nbCoeff	; la directive ".cproc" signifie "procédure C", permet de récupérer les paramètres passés à la fonction comme en "C"
+
+			.reg	result, ra0, ra1, ra3, ra5, ra2				; La directive ".reg" permet d'assigner un registre à une variable
+ 	zero			a2
+LOOP:
+	ldw				*pta++,ra0	; chargement d'un coef a
+	ldw				*ptx++,ra1	; chargement d'un coef x
+
+	mpy				ra0,ra1,ra3	; multiplication de la parte basse
+	mpyh			ra0,ra1,ra5	; multiplication de la partie haute
+
+	add				ra2,ra3,ra2	; a2 += a3 (ajout partie basse)
+	add				ra2,ra5,ra2	; a2 += a5 (ajout partie haute)
+
+	sub				nbCoeff,2,nbCoeff		; decremente de 2 car on charge deux echantillons (ldw, charge 32 bits)
+
+	[nbCoeff] b 	LOOP
+
+	mv				ra2,result
+
+	shr				result,15,result	; Etrange instruction ... à vous de dire son rôle !!
+	.return			result  			; La directive ".return" permet de renvoyer la valeur de retour de la fonction
+	.endproc						; Fin de la procédure "C"

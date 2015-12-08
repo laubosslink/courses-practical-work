@@ -1,0 +1,7 @@
+-z -c -m"./Debug/ex2.map" -o"./Debug/ex2.out" -w -x -i"C:/CCStudio_v3.1/C6000/rtdx/lib" -i"C:/CCStudio_v3.1/C6000/csl/lib" -i"C:/CCStudio_v3.1/C6000/xdais/lib" -i"C:/CCStudio_v3.1/C6000/bios/lib" -i"C:/CCStudio_v3.1/C6000/cgtools/lib"
+"Z:\dsp\ex2\ex2cfg.cmd"
+"Z:\dsp\ex2\Debug\ex2.obj"
+"Z:\dsp\ex2\Debug\ex2cfg.obj"
+"Z:\dsp\ex2\Debug\ex2cfg_c.obj"
+"Z:\dsp\ex2\Debug\USL.obj"
+"C:\CCStudio_v3.1\C6000\dsk6713\lib\dsk6713bsl.lib"

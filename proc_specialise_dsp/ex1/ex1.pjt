@@ -1,0 +1,42 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="Z:\dsp\"
+ProjectType=Executable
+CPUFamily=TMS320C62XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="C:\CCStudio_v3.1\C6000\dsk6713\lib\dsk6713bsl.lib"
+Source="ex1.C"
+Source="ex1.cdb"
+Source="USL.C"
+
+[Generated Files]
+Source="ex1cfg.cmd"
+Source="ex1cfg.s62"
+Source="ex1cfg_c.c"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"C:\CCStudio_v3.1\C6000\dsk6713\include" -d"_DEBUG"
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release"
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\ex1.map" -o".\Debug\ex1.out" -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\ex1.map" -o".\Release\ex1.out" -w -x
+
+["ex1cfg.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["ex1cfg.cmd" Settings: "Release"]
+LinkOrder=1
+
