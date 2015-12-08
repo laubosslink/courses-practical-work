@@ -1,0 +1,100 @@
+====== Alire ======
+
+----
+
+Ce fichier respecte la norme DokuWiki
+
+Realise par PARMENTIER Laurent, ELHIMDI Yasmine
+
+Groupe 2.
+
+Compte rendu du TP 4.
+
+====== Difficultes ======
+
+----
+
+
+====== Bogues ======
+
+----
+
+L'alrgorithme respecte celui du cours, mais on a aucun moyen de vérifier si il y a des bogues.
+====== Trace d'execution ======
+
+----
+
+Grâce à ''genere_graphe_0.c'' nous avons générés 2 graphes non orientés, non valués, mais un connexe, et l'autre avec des composantes connexes.
+
+<code c>
+    connexe = parcour_profondeur(g);
+    if(connexe){
+        printf("\nLe graphe est connexe\n");
+    } else {
+        printf("\nLe graphe n'est pas connexe\n");
+    }
+</code>
+
+**Ainsi nous avons testé celui connexe**((partie du code dans la fonction main)):
+<code bash>
+laubosslink@pc-lbl:/media/files/projects/courses/ensicaen/media/s2/algo_avancee/tps/tp4_new$ ./bin/debug/l_adj extra/graphe_connexe.txt 
+4 3 1 2 0
+Le graphe est connexe
+</code>
+
+<code - graphe_connexe.txt>
+5 10
+1 3
+4 2
+1 4
+2 3
+0 1
+3 4
+0 2
+4 0
+3 0
+2 1
+</code>
+
+**Et celui non connexe** :
+<code bash>
+laubosslink@pc-lbl:/media/files/projects/courses/ensicaen/media/s2/algo_avancee/tps/tp4_new$ ./bin/debug/l_adj extra/graphe_non_connexe.txt 
+4 1 2 0 3 
+Le graphe n'est pas connexe
+</code>
+
+<code - graphe_non_connexe.txt>
+5 10
+4 2
+1 4
+0 1
+0 2
+4 0
+2 1
+</code>
+
+====== Amélioration ======
+
+----
+
+On pourrait améliorer le code pour savoir si un graphe est connexe ou non. En effet, actuellement pour savoir si un graphe est connexe, on utilise le fait suivant lors du parcours(( en largeur ou profondeur)) de chaque sommet((lire le commentaire)) :
+<code c>
+    for(u=0; u<v; u++){
+        if(couleur[u] == BLANC){
+            visite_largeur(l.tab, couleur, d, pred, u);
+
+            /* Si une couleur est blanche après la première visite,
+             * alors la visite n'a pas abouti sur l'ensemble des sommet
+             * ce qui implique que le graphe n'est pas connexe.
+             */
+            if(u > 0)
+                connexe = 0;
+        }
+    }
+</code>
+
+Or on pourrait très bien utiliser le fait que ''le nombre de sommet == le nombre arc -1''. Forcément cela implique aussi que le graphe est connexe. 
+
+Quelle est la différence ? notre algorithme ne se trompe pas si le fichier contenant le graphe est faux (faux nombre de sommet, ou faux nombre d'arc). 
+
+

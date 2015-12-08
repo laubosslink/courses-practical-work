@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1396800208 source:/home/laubosslink/Documents/projects/courses/ensicaen/media/s2/algo_avancee/tps/tp4/src/L_ADJ.c
+	<stdio.h>
+	<stdlib.h>
+
+1396253438 source:/home/laubosslink/Documents/projects/courses/ensicaen/media/s2/algo_avancee/tps/tp4/src/genere_graphe_0.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
