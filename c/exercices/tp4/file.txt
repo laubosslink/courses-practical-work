@@ -1,0 +1,16 @@
+selection: 5000 100.000000                                                                                                                                                                      
+insertion: 5000 60.000000
+echange: 5000 290.000000
+selection: 7500 210.000000
+insertion: 7500 130.000000
+echange: 7500 670.000000
+selection: 10000 370.000000
+insertion: 10000 230.000000
+echange: 10000 1290.000000
+selection: 12500 570.000000
+insertion: 12500 360.000000
+echange: 12500 2060.000000
+selection: 15000 800.000000
+insertion: 15000 520.000000
+echange: 15000 2960.000000
+

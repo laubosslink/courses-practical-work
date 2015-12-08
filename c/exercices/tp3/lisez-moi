@@ -1,0 +1,84 @@
+laubosslink@pc-lbl:/media/files/projects/courses/ensicaen/media/tps/c/tp3$ ./main 
+Quel exercice executer ?
+1: exercice1
+2: exercice2
+3: exercice3
+4: exercice4
+5: exercice5
+6: exercice6
+1
+Rayon choisi ? 137.13
+Le volume et l'aire d'une sphère de rayon 137.130005 sont respectivement 1.08e+07f et 2.36e+05f.
+
+laubosslink@pc-lbl:/media/files/projects/courses/ensicaen/media/tps/c/tp3$ nano lisez-moi 
+laubosslink@pc-lbl:/media/files/projects/courses/ensicaen/media/tps/c/tp3$ ./main 
+Quel exercice executer ?
+1: exercice1
+2: exercice2
+3: exercice3
+4: exercice4
+5: exercice5
+6: exercice6
+2
+Nombre de fois où la barre de longueur variable devra être affichée: 3
+
+laubosslink@pc-lbl:/media/files/projects/courses/ensicaen/media/tps/c/tp3$ ./main 
+Quel exercice executer ?
+1: exercice1
+2: exercice2
+3: exercice3
+4: exercice4
+5: exercice5
+6: exercice6
+3
+(r)ouge, (o)range, (j)aune, (v)ert, (b)leu, (i)ndigo, (n)oir, (m)agenta, (t)urquoise
+Veuillez entrer la lettre initiale d'une des couleurs: t
+turquoise
+s u w y 
+h f d b 
+(r)ouge, (o)range, (j)aune, (v)ert, (b)leu, (i)ndigo, (n)oir, (m)agenta, (t)urquoise
+Veuillez entrer la lettre initiale d'une des couleurs: r
+rouge
+c e g i k m o q s u w y 
+x v t r p n l j h f d b 
+(r)ouge, (o)range, (j)aune, (v)ert, (b)leu, (i)ndigo, (n)oir, (m)agenta, (t)urquoise
+Veuillez entrer la lettre initiale d'une des couleurs: l
+a c e g i k m o q s u w y 
+z x v t r p n l j h f d b 
+
+laubosslink@pc-lbl:/media/files/projects/courses/ensicaen/media/tps/c/tp3$ ./main 
+Quel exercice executer ?
+1: exercice1
+2: exercice2
+3: exercice3
+4: exercice4
+5: exercice5
+6: exercice6
+4 
+pgcd(15, 5) = 5
+pgcd(11, 17) = 1
+pgcd(4, 12) = 4
+pgcd(45741, 213456) = 3
+pgcd(16, 9) = 1
+
+laubosslink@pc-lbl:/media/files/projects/courses/ensicaen/media/tps/c/tp3$ ./main 
+Quel exercice executer ?
+1: exercice1
+2: exercice2
+3: exercice3
+4: exercice4
+5: exercice5
+6: exercice6
+5
+c(28,14) = 40116600
+
+laubosslink@pc-lbl:/media/files/projects/courses/ensicaen/media/tps/c/tp3$ ./main 
+Quel exercice executer ?
+1: exercice1
+2: exercice2
+3: exercice3
+4: exercice4
+5: exercice5
+6: exercice6
+6
+f(x)=0; quand x~=1.618034;
